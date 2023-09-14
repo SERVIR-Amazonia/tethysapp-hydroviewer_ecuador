@@ -47,7 +47,7 @@
             <div class="container-fluid">
                 {% gizmo data_plot %}
                 <button type="button" class="btn btn-sm btn-primary" onclick="descargarArchivo('get-simulated-data-xlsx')">
-                    <i class="fa-solid fa-download"></i> Descargar Simulación histórica
+                    <i class="fa-solid fa-download"></i> &nbsp; Descargar Simulación histórica
                 </button>
             </div>
         </div>
@@ -86,7 +86,7 @@
                     </div>
                     <br>
                     <button type="button" class="btn btn-sm btn-primary" onclick="descargarArchivo('get-forecast-xlsx')">
-                        <i class="fa-solid fa-download"></i> Descargar Pronóstico
+                        <i class="fa-solid fa-download"></i> &nbsp; Descargar Pronóstico
                     </button>
                 </div>
                 
@@ -106,13 +106,6 @@
             enableTime: false,
             locale: "es"
         });
-
-        loader = `<div class="loading-container" style="height: 350px; padding-top: 12px;"> 
-                        <div class="loading"> 
-                        <h2>LOADING DATA</h2>
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span> 
-                        </div>
-                    </div>`;
         
         $("#button_datepicker_raw").on("click", function(){
             forecast_date = $("#datepicker_raw").val();

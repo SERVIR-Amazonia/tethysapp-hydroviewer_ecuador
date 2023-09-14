@@ -1,9 +1,14 @@
 .control {
-    height: 620px;
-    width: 300px;
-    background-color: rgba(32, 41, 92, 0.8);
-    padding: 10px;
+    padding: 0px;
+    margin-left: 25px;
 }
+
+.control button{
+    margin: 0px !important;
+    font-size: 20px !important;
+}
+
+
 
 
 .label-control {
@@ -12,6 +17,19 @@
     font-weight: bold;
     padding-bottom: 5px;
     padding-left: 3px;
+}
+
+.control .selectize-input {
+    width: 260px !important;
+    font-size: 13px !important;
+}
+
+.selectize-control {
+    padding-bottom: 13px !important;
+}
+
+.selectize-input input {
+    font-size: 13px !important;
 }
 
 .selectize-dropdown .selected {
@@ -25,6 +43,9 @@
 
 .form-control {
     font-size: 13px !important;
+}
+#shpFile {
+    width: 95% !important;
 }
 
 .alert-panel-checkbox .form-check-label {
@@ -55,6 +76,8 @@
 .alert-panel-checkbox {
     font-size: 13px !important;
 }
+
+
 
 
 
@@ -91,7 +114,7 @@
 
 .table-warning {
     border-collapse: collapse;
-    width: 100%;
+    width: 95%;
 }
 
 .th-warning, .td-warning {
@@ -115,4 +138,30 @@
 
 .muy-alto {
     background-color: #EF4C4D;
+}
+
+
+
+
+/* SCROLL BAR */
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: var(--app-primary-color); 
+}
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #C8C8C8; 
+    border-radius: 5px;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: white; 
 }

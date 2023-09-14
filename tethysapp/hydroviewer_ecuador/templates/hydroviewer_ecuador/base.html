@@ -256,6 +256,12 @@
       <div id="page-attributes" data-username="{{ user.username }}" style="display: none;"></div>
     {% endblock %}
 
+    {% block env_vars %}
+    {% endblock %}
+
+    {% block libraries_js %}
+    {% endblock %}
+
     {% block content_dependent_styles %}
       {% gizmo_dependencies css %}
     {% endblock %}
