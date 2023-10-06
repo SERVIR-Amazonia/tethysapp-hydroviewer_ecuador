@@ -69,6 +69,23 @@ def get_alerts(request):
     return JsonResponse(stations)
 
 
+@controller(name='get_alerts_drought',url='{0}/get-alerts-drought'.format(APP_URL))
+def get_alerts_drought(request):
+    # Establish connection to database
+    db = create_engine(tokencon)
+    conn = db.connect()
+    # Query to database
+    stations = pd.read_sql("select * from drainage_network where drought != 'S0'", conn);
+    conn.close()
+    stations = to_geojson(
+        df = stations,
+        lat = "latitude",
+        lon = "longitude",
+        properties = ["comid", "latitude", "longitude", "river", "loc0", "loc1", "loc2", "drought"]
+    )
+    return JsonResponse(stations)
+
+
 @controller(name='get_rivers',url='{0}/get-rivers'.format(APP_URL))
 def get_rivers(request):
     # Establish connection to database
