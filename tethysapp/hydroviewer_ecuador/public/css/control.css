@@ -10,6 +10,9 @@
 
 
 
+.title-section{
+    color: white;
+}
 
 .label-control {
     font-size: 14px !important;
@@ -81,6 +84,7 @@
 
 
 
+
 .form-switch #check-000yr:checked {
     background-color: #2AAD27;
 }
@@ -109,12 +113,24 @@
     background-color: #8000F6;
 }
 
+.form-switch #check-d-medio:checked {
+    background-color: #0F71C5;
+}
 
+.form-switch #check-d-alto:checked {
+    background-color: #0F4371;
+}
+
+.form-switch #check-d-muy-alto:checked {
+    background-color: #3F4850;
+}
 
 
 .table-warning {
     border-collapse: collapse;
-    width: 95%;
+    width: 200px !important;
+    padding-bottom: 12px !important;
+    padding-top: 4px !important;
 }
 
 .th-warning, .td-warning {
@@ -122,6 +138,7 @@
     text-align: center;
     width: 25%;
     font-weight: normal;
+    border: 1px solid black
 }
 
 .bajo {
@@ -164,4 +181,8 @@
   /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: white; 
+}
+
+.leaflet-bottom .leaflet-control {
+    margin-bottom: 0px !important;
 }

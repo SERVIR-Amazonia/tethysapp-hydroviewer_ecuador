@@ -53,3 +53,29 @@ function add_station_icon(layer, RP){
 } 
 
 
+
+
+
+const station_S1 = IconMarker("station","S1");
+const station_S2 = IconMarker("station","S2");
+const station_S3 = IconMarker("station","S3");
+
+function IconParse2(feature, latlng) {
+    switch (feature.properties.drought) {
+        case "S1":
+            station_icon = station_S1;
+            break;
+        case "S2":
+            station_icon = station_S2;
+            break;
+        case "S3":
+            station_icon = station_S3;
+            break;
+    }
+    return L.marker(latlng, { icon: station_icon });
+}
+
+function add_station_icon_drought(layer, RP){
+    return(L.geoJSON(layer.features.filter(item => item.properties.drought === RP), {pointToLayer: IconParse2}))
+} 
+

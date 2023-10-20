@@ -31,7 +31,7 @@ fetch('https://geoserver.hydroshare.org/geoserver/HS-77951ba9bcf04ac5bc68ae3be2a
 .then(data => {
     rivers = L.geoJSON(data, {
         style: {
-            weight: 1,
+            weight: 0.7,
             color: "#4747C9",
             zIndex: 10000
         }
@@ -70,3 +70,4 @@ $(".sub-menu a").click(function () {
 });
 
  
+
