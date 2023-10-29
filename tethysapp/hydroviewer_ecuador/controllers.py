@@ -113,7 +113,7 @@ def get_data(request):
     db= create_engine(tokencon)
     conn = db.connect()
     # Data series
-    simulated_data = get_format_data("select * from r_{0} where datetime < '2022-06-01 00:00:00';".format(station_comid), conn)
+    simulated_data = get_format_data("select * from r_{0} where datetime < '2022-06-01' and datetime > '1979-01-02';".format(station_comid), conn)
     ensemble_forecast = get_format_data("select * from f_{0};".format(station_comid), conn)
     forecast_records = get_format_data("select * from fr_{0};".format(station_comid), conn)
     ensemble_stats = get_ensemble_stats(ensemble_forecast)
@@ -121,30 +121,29 @@ def get_data(request):
     # Close conection
     conn.close()
     # Plots and tables
-    data_plot = geoglows.plots.historic_simulation(
+    data_plot = get_historic_simulation(
                                     hist = simulated_data,
                                     rperiods = return_periods,
-                                    outformat = "plotly",
-                                    titles = {'COMID': station_comid})
+                                    comid = station_comid)
     daily_average_plot = get_daily_average_plot(
                                     sim = simulated_data,
                                     comid = station_comid)
     monthly_average_plot = get_monthly_average_plot(
                                     sim = simulated_data,
                                     comid = station_comid)
-    flow_duration_curve = geoglows.plots.flow_duration_curve(
-                                    hist = simulated_data,
-                                    outformat = "plotly",
-                                    titles = {'COMID': station_comid})
+    flow_duration_curve = get_flow_duration_curve(
+                                    sim = simulated_data,
+                                    comid = station_comid)
     acumulated_volume_plot = get_acumulated_volume_plot(
                                     sim = simulated_data,
                                     comid = station_comid)
-    forecast_plot = get_forecast_plot(
-                                    comid = station_comid, 
-                                    stats = ensemble_stats, 
-                                    rperiods = return_periods, 
-                                    records = forecast_records)
-    forecast_table = geoglows.plots.probabilities_table(
+    forecast_plot = get_forecast_stats(
+                            stats = ensemble_stats,
+                            rperiods = return_periods,
+                            comid = station_comid,
+                            records=forecast_records,
+                            sim = simulated_data,)
+    forecast_table = get_probabilities_table(
                                     stats = ensemble_stats,
                                     ensem = ensemble_forecast, 
                                     rperiods = return_periods)
@@ -181,12 +180,13 @@ def get_raw_forecast_date(request):
     # Close conection
     conn.close()
     # Plots and tables
-    forecast_plot = get_forecast_plot(
-                                    comid = station_comid, 
-                                    stats = ensemble_stats, 
-                                    rperiods = return_periods, 
-                                    records = forecast_records)
-    forecast_table = geoglows.plots.probabilities_table(
+    forecast_plot = get_forecast_stats(
+                            stats = ensemble_stats,
+                            rperiods = return_periods,
+                            comid = station_comid,
+                            records = forecast_records,
+                            sim = simulated_data)
+    forecast_table = get_probabilities_table(
                                     stats = ensemble_stats,
                                     ensem = ensemble_forecast, 
                                     rperiods = return_periods)
