@@ -16,17 +16,3 @@ future.setDate(now.getDate() + 5)
 $("#emision-date").html(get_date(now));
 $("#validity-date").html(`Desde ${get_date(now)} hasta ${get_date(future)}`); 
 
-
-
-
-
-
-// Retrieve the data
-$.ajax({
-  type: 'GET', 
-  url: "get-report",
-  data: {
-      html: document.getElementById('report-container-id').innerHTML
-  }
-})
-    
