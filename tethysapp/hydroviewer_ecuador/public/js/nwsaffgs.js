@@ -42,17 +42,31 @@ function getColor(valor, tablaColores) {
 
 
 // Estilo para ASM
+//const colASM = [
+//    { valor: 0.00, hex: "#F9F788", r: 249, g: 247, b: 136 },
+//    { valor: 0.15, hex: "#D6D309", r: 214, g: 211, b: 9 },
+//    { valor: 0.30, hex: "#B08C00", r: 176, g: 140, b: 0 },
+//    { valor: 0.30, hex: "#B6F8A9", r: 182, g: 248, b: 169 },
+//    { valor: 0.45, hex: "#1DD41C", r: 29, g: 212, b: 28 },
+//    { valor: 0.60, hex: "#005200", r: 0, g: 82, b: 0 },
+//    { valor: 0.60, hex: "#30F7F8", r: 48, g: 247, b: 248 },
+//    { valor: 0.80, hex: "#300EFF", r: 48, g: 14, b: 255 },
+//    { valor: 1.00, hex: "#100053", r: 16, g: 0, b: 83 },
+//];
 const colASM = [
-    { valor: 0.00, hex: "#F9F788", r: 249, g: 247, b: 136 },
-    { valor: 0.15, hex: "#D6D309", r: 214, g: 211, b: 9 },
-    { valor: 0.30, hex: "#B08C00", r: 176, g: 140, b: 0 },
-    { valor: 0.30, hex: "#B6F8A9", r: 182, g: 248, b: 169 },
-    { valor: 0.45, hex: "#1DD41C", r: 29, g: 212, b: 28 },
-    { valor: 0.60, hex: "#005200", r: 0, g: 82, b: 0 },
-    { valor: 0.60, hex: "#30F7F8", r: 48, g: 247, b: 248 },
-    { valor: 0.80, hex: "#300EFF", r: 48, g: 14, b: 255 },
-    { valor: 1.00, hex: "#100053", r: 16, g: 0, b: 83 },
-];
+        { valor: 0.00, hex: "#F9F788", r: 249, g: 247, b: 136 },
+        { valor: 0.10, hex: "#D6D309", r: 214, g: 211, b: 9 },
+        { valor: 0.20, hex: "#B08C00", r: 176, g: 140, b: 0 },
+        { valor: 0.30, hex: "#B6F8A9", r: 182, g: 248, b: 169 },
+        { valor: 0.40, hex: "#1DD41C", r: 29, g: 212, b: 28 },
+        { valor: 0.50, hex: "#005200", r: 0, g: 82, b: 0 },
+        { valor: 0.60, hex: "#359AFF", r: 53, g: 154, b: 255 },
+        { valor: 0.70, hex: "#0069D2", r: 0, g: 105, b: 210 },
+        { valor: 0.80, hex: "#00367F", r: 0, g: 54, b: 127 },
+        { valor: 0.90, hex: "#100053", r: 16, g: 0, b: 83 },
+        { valor: 1.00, hex: "#000000", r: 0, g: 0, b: 0 },
+    ];
+    
 function style_ASM(feature){
     return {
         fillColor: getColor(feature.properties.asm, colASM),
