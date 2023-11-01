@@ -1,0 +1,37 @@
+/* BODY */
+body {
+    overflow-y: auto !important;
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: white; 
+}
+::-webkit-scrollbar-thumb {
+    background: lightgray; 
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: gray; 
+}
+
+
+
+.report-container{
+    width: 740px;/*826px; height: 1142px;*/
+    background-color: white;
+    margin: auto;
+    font-size: 13px;
+}
+
+.map{
+    width: 320px !important;
+    margin: auto;
+}
+
+.text-region{
+    font-size: 12px;
+}

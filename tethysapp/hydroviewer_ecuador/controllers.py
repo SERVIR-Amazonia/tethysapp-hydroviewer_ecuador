@@ -15,6 +15,8 @@ import pandas as pd
 from sqlalchemy import create_engine
 from pandas_geojson import to_geojson
 
+#from weasyprint import HTML
+
 # App settings
 from .app import HydroviewerEcuador as app
 
@@ -243,3 +245,27 @@ def get_forecast_xlsx(request):
     response.write(output.getvalue())
     return response
 
+
+
+
+@controller(name='report', url='{0}/report'.format(APP_URL))
+def report(request):
+    context = {
+        "server": app.get_custom_setting('SERVER'),
+        "app_name": app.package
+    }
+    return render(request, '{0}/report.html'.format(app.package), context)
+
+
+#@controller(name='get_report', url='{0}/get_report'.format(APP_URL))
+#def get_report(request):
+#    # Retrieving GET arguments
+#    html_string = request.GET['html_string']
+#    # Crear un objeto HTML de WeasyPrint
+#    html = HTML(string=html_string)
+#    # Generar el PDF
+#    pdf_file = html.write_pdf()
+#    # Crear una respuesta HTTP con el PDF
+#    response = HttpResponse(pdf_file, content_type='application/pdf')
+#    response['Content-Disposition'] = 'attachment; filename="mi_archivo.pdf"'
+#    return response
