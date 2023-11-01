@@ -15,7 +15,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 from pandas_geojson import to_geojson
 
-#from weasyprint import HTML
+from weasyprint import HTML
 
 # App settings
 from .app import HydroviewerEcuador as app
