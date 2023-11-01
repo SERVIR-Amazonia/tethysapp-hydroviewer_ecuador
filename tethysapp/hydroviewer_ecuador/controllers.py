@@ -248,9 +248,27 @@ def get_forecast_xlsx(request):
 
 @controller(name='report', url='{0}/report'.format(APP_URL))
 def report(request):
+    db = create_engine(token)
+    conn = db.connect()
+    df = pd.read_sql("select * from ffgs_stats;", conn)
     context = {
         "server": app.get_custom_setting('SERVER'),
-        "app_name": app.package
+        "app_name": app.package,
+        "pacum_c": df["pacum"][0],
+        "pacum_s": df["pacum"][1],
+        "pacum_o": df["pacum"][2],
+        "asm_c": df["asm"][0],
+        "asm_s": df["asm"][1],
+        "asm_o": df["asm"][2],
+        "ffg_c": df["ffg"][0],
+        "ffg_s": df["ffg"][1],
+        "ffg_o": df["ffg"][2],
+        "fmap24_c": df["fmap24"][0],
+        "fmap24_s": df["fmap24"][1],
+        "fmap24_o": df["fmap24"][2],
+        "ffr24_c": df["ffr24"][0],
+        "ffr24_s": df["ffr24"][1],
+        "ffr24_o": df["ffr24"][2]
     }
     return render(request, '{0}/report.html'.format(app.package), context)
 

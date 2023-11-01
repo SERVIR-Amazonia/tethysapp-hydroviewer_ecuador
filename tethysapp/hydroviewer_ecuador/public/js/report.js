@@ -16,3 +16,29 @@ future.setDate(now.getDate() + 5)
 $("#emision-date").html(get_date(now));
 $("#validity-date").html(`Desde ${get_date(now)} hasta ${get_date(future)}`); 
 
+
+
+
+
+
+function convertirAPDF() {
+    const elemento = document.getElementById('report-container-id').innerHTML;
+    const pdfConfig = {
+      margin: 10,
+      filename: 'boletin_hidrologico',
+      image: { type: 'png' },
+      html2canvas: { 
+        scale: 2, 
+        useCORS: true  
+      },
+      jsPDF: { 
+        unit: 'mm', 
+        format: 'a4', 
+        orientation: 'portrait'
+      },
+      pagebreak: { mode: ['avoid-all'] },
+    };
+    html2pdf().set(pdfConfig).from(elemento).toPdf().save('boletin.pdf')
+  }
+
+
