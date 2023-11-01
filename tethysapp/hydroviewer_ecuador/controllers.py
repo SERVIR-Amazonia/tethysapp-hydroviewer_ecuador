@@ -257,15 +257,15 @@ def report(request):
     return render(request, '{0}/report.html'.format(app.package), context)
 
 
-#@controller(name='get_report', url='{0}/get_report'.format(APP_URL))
-#def get_report(request):
-#    # Retrieving GET arguments
-#    html_string = request.GET['html_string']
-#    # Crear un objeto HTML de WeasyPrint
-#    html = HTML(string=html_string)
-#    # Generar el PDF
-#    pdf_file = html.write_pdf()
-#    # Crear una respuesta HTTP con el PDF
-#    response = HttpResponse(pdf_file, content_type='application/pdf')
-#    response['Content-Disposition'] = 'attachment; filename="mi_archivo.pdf"'
-#    return response
+@controller(name='get_report', url='{0}/get_report'.format(APP_URL))
+def get_report(request):
+    # Retrieving GET arguments
+    html_string = request.GET['html_string']
+    # Crear un objeto HTML de WeasyPrint
+    html = HTML(string=html_string)
+    # Generar el PDF
+    pdf_file = html.write_pdf()
+    # Crear una respuesta HTTP con el PDF
+    response = HttpResponse(pdf_file, content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="mi_archivo.pdf"'
+    return response
