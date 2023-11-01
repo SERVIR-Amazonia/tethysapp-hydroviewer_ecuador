@@ -248,7 +248,7 @@ def get_forecast_xlsx(request):
 
 @controller(name='report', url='{0}/report'.format(APP_URL))
 def report(request):
-    db = create_engine(token)
+    db = create_engine(tokencon)
     conn = db.connect()
     df = pd.read_sql("select * from ffgs_stats;", conn)
     context = {
