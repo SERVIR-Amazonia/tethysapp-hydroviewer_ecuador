@@ -1,25 +1,16 @@
 ####################################################################################################
 ##                                   LIBRARIES AND DEPENDENCIES                                   ##
 ####################################################################################################
-
-# Geoglows
 import geoglows
 import numpy as np
 import math
-import hydrostats as hs
-import hydrostats.data as hd
-import HydroErr as he
 import plotly.graph_objs as go
 import datetime as dt
 import pandas as pd
 
-
-
-
-####################################################################################################
+###################################################################################################
 ##                                 UTILS AND AUXILIAR FUNCTIONS                                   ##
 ####################################################################################################
-
 def get_format_data(sql_statement, conn):
     # Retrieve data from database
     data =  pd.read_sql(sql_statement, conn)

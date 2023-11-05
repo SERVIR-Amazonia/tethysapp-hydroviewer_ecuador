@@ -1,23 +1,14 @@
 ####################################################################################################
 ##                                   LIBRARIES AND DEPENDENCIES                                   ##
 ####################################################################################################
-
-# Geoglows
 import geoglows
 import numpy as np
 import math
-import hydrostats as hs
-import hydrostats.data as hd
-import HydroErr as he
 import plotly.graph_objs as go
 import datetime as dt
 import pandas as pd
 import jinja2
 import os
-#from plotly.offline import plot as offline_plot
-
-
-
 
 ####################################################################################################
 ##                                  AUXILIAR PLOTTING FUNCTIONS                                   ##
