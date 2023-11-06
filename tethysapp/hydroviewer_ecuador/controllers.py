@@ -32,7 +32,8 @@ from .models.plots import *
 DB_USER = app.get_custom_setting('DB_USER')
 DB_PASS = app.get_custom_setting('DB_PASS')
 DB_NAME = app.get_custom_setting('DB_NAME')
-APP_URL = app.package.replace("_", "-")
+APP_NAME = "hydroviewer_ecuador"
+APP_URL = APP_NAME.replace("_", "-")
 
 # Generate the conection token
 tokencon = "postgresql+psycopg2://{0}:{1}@localhost:5432/{2}".format(DB_USER, DB_PASS, DB_NAME)
@@ -43,13 +44,13 @@ tokencon = "postgresql+psycopg2://{0}:{1}@localhost:5432/{2}".format(DB_USER, DB
 ####################################################################################################
 ##                                   CONTROLLERS AND REST APIs                                    ##
 ####################################################################################################
-@controller(name='home', url=APP_URL)
+@controller #(name='home', url=APP_URL)
 def home(request):
     context = {
         "server": app.get_custom_setting('SERVER'),
-        "app_name": app.package
+        "app_name": APP_NAME
     }
-    return render(request, '{0}/home.html'.format(app.package), context)
+    return render(request, '{0}/home.html'.format(APP_NAME), context)
 
 
 @controller(name='get_alerts',url='{0}/get-alerts'.format(APP_URL))
