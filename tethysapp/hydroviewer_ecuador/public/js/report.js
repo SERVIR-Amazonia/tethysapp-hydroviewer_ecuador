@@ -41,7 +41,7 @@ async function convertirAPDF() {
         format: 'letter', 
         orientation: 'portrait'
       },
-      pagebreak: { mode: 'avoid-all'},
+      pagebreak: { mode: 'avoid-all', after: "breakpage"},
     };
     
     const imgHeader = `${server}/static/${app_name}/images/report_header.png`;
