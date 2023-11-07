@@ -56,7 +56,7 @@
         <div contenteditable="true">Advertencia</div>
       </div>
       <br>
-      <div class="text-center"  contenteditable="true">
+      <div class="text-center">
         La <b>DIRECCIÓN DE PRONÓSTICOS Y ALERTAS HIDROMETEOROLÓGICAS DEL INAMHI</b>, basándose en la información 
         obtenida del modelo hidrológico GEOGLOWS, el sistema guía de crecidas repentinas FFGS (Flash Flood Guidance System), 
         e hidroestimadores satelitales, emite el siguiente boletín de vigilancia y predicción de condiciones hidrológicas:
@@ -66,10 +66,10 @@
 
     <div class="report-body">
       <div class="row">
-        <div class="col d-flex justify-content-center text-center">
+        <div class="col d-flex justify-content-center text-center img-title">
           <b>Precipitación acumulada<br>(últimas 24 hrs)</b> 
         </div>
-        <div class="col d-flex justify-content-center text-center">
+        <div class="col d-flex justify-content-center text-center img-title">
           <b>Saturación media del suelo<br>(últimas 6 hrs)</b>
         </div>
         <div class="w-100"></div>
@@ -87,22 +87,22 @@
         </div>
         <div class="w-100"></div>
         <div class="col text-region">
-          <div id="pacum-costa"><b>Región Litoral:</b> {{ pacum_c|safe }}</div>
-          <div id="pacum-sierra"><b>Región Interandina:</b> {{ pacum_s|safe }}</div>
-          <div id="pacum-amazonia"><b>Región Amazónica:</b> {{ pacum_o|safe }}</div>
+          <div id="pacum-costa" contenteditable="true"><b>Región Litoral:</b> {{ pacum_c|safe }}</div>
+          <div id="pacum-sierra" contenteditable="true"><b>Región Interandina:</b> {{ pacum_s|safe }}</div>
+          <div id="pacum-amazonia" contenteditable="true"><b>Región Amazónica:</b> {{ pacum_o|safe }}</div>
         </div>
         <div class="col text-region">
-          <div id="ssm-costa"><b>Región Litoral:</b> {{ asm_c|safe }}</div>
-          <div id="ssm-sierra"><b>Región Interandina:</b> {{ asm_s|safe }}</div>
-          <div id="ssm-amazonia"><b>Región Amazónica:</b> {{ asm_o|safe }}</div>
+          <div id="ssm-costa" contenteditable="true"><b>Región Litoral:</b> {{ asm_c|safe }}</div>
+          <div id="ssm-sierra" contenteditable="true"><b>Región Interandina:</b> {{ asm_s|safe }}</div>
+          <div id="ssm-amazonia" contenteditable="true"><b>Región Amazónica:</b> {{ asm_o|safe }}</div>
         </div>
       </div>
       <br>
       <div class="row">
-        <div class="col d-flex justify-content-center text-center">
+        <div class="col d-flex justify-content-center text-center img-title">
           <b>Pronóstico de precipitación<br>(próx. 24 hrs)</b>
         </div>
-        <div class="col d-flex justify-content-center text-center">
+        <div class="col d-flex justify-content-center text-center img-title">
           <b>Precipitación requerida para crecida<br>(próx. 24 hrs)</b>
         </div>
         <div class="w-100"></div>
@@ -121,22 +121,22 @@
         </div>
         <div class="w-100"></div>
         <div class="col text-region">
-          <div id="pacum-costa"><b>Región Litoral:</b> {{ fmap24_c|safe }}</div>
-          <div id="pacum-sierra"><b>Región Interandina:</b> {{ fmap24_s|safe }}</div>
-          <div id="pacum-amazonia"><b>Región Amazónica:</b> {{ fmap24_o|safe }}</div>
+          <div id="pacum-costa" contenteditable="true"><b>Región Litoral:</b> {{ fmap24_c|safe }}</div>
+          <div id="pacum-sierra" contenteditable="true"><b>Región Interandina:</b> {{ fmap24_s|safe }}</div>
+          <div id="pacum-amazonia" contenteditable="true"><b>Región Amazónica:</b> {{ fmap24_o|safe }}</div>
         </div>
         <div class="col text-region">
-          <div id="ssm-costa"><b>Región Litoral:</b> {{ ffg_c|safe }}</div>
-          <div id="ssm-sierra"><b>Región Interandina:</b> {{ ffg_s|safe }}</div>
-          <div id="ssm-amazonia"><b>Región Amazónica:</b> {{ ffg_o|safe }}</div>
+          <div id="ssm-costa" contenteditable="true"><b>Región Litoral:</b> {{ ffg_c|safe }}</div>
+          <div id="ssm-sierra" contenteditable="true"><b>Región Interandina:</b> {{ ffg_s|safe }}</div>
+          <div id="ssm-amazonia" contenteditable="true"><b>Región Amazónica:</b> {{ ffg_o|safe }}</div>
         </div>
       </div>
       <br>
       <div class="row">
-        <div class="col d-flex justify-content-center text-center">
+        <div class="col d-flex justify-content-center text-center img-title">
           <b>Riesgo de crecidas FFGS</b>
         </div>
-        <div class="col d-flex justify-content-center text-center">
+        <div class="col d-flex justify-content-center text-center img-title">
           <b>Alertas de crecidas GEOGLOWS</b>
         </div>
         <div class="w-100"></div>
@@ -154,14 +154,14 @@
         </div>
         <div class="w-100"></div>
         <div class="col text-region">
-          <div id="pacum-costa"><b>Región Litoral:</b> {{ ffr24_c|safe }}</div>
-          <div id="pacum-sierra"><b>Región Interandina:</b> {{ ffr24_s|safe }}</div>
+          <div id="pacum-costa" contenteditable="true"><b>Región Litoral:</b> {{ ffr24_c|safe }}</div>
+          <div id="pacum-sierra" contenteditable="true"><b>Región Interandina:</b> {{ ffr24_s|safe }}</div>
           <div id="pacum-amazonia"><b>Región Amazónica:</b> {{ ffr24_o|safe }}</div>
         </div>
         <div class="col text-region">
-          <div id="ssm-costa"><b>Región Litoral:</b></div>
-          <div id="ssm-sierra"><b>Región Interandina:</b></div>
-          <div id="ssm-amazonia"><b>Región Amazónica:</b></div>
+          <div id="ssm-costa" contenteditable="true"><b>Región Litoral:</b></div>
+          <div id="ssm-sierra" contenteditable="true"><b>Región Interandina:</b></div>
+          <div id="ssm-amazonia" contenteditable="true"><b>Región Amazónica:</b></div>
         </div>
       </div>
     </div>
@@ -263,6 +263,5 @@
   {{ block.super }}
   <script src="{% static 'hydroviewer_ecuador/js/main.js' %}"></script>
   <script src="{% static 'hydroviewer_ecuador/js/report.js' %}"></script>
-  
 {% endblock %}
 

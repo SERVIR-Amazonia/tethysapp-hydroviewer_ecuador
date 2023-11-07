@@ -39,9 +39,11 @@ body {
 }
 
 .text-region{
-    font-size: 12px;
+    font-size: 12px !important;
 }
-
+.img-title{
+    font-size: 14px !important;
+}
 
 
 
