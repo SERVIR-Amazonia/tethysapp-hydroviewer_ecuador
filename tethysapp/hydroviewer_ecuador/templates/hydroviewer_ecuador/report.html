@@ -32,55 +32,57 @@
 
 
 {% block app_content %}
+<div class="app-container">
+  <br>
   <div class="report-container" id="report-container-id">
     <div class="report-header">
-      <div class="d-flex justify-content-center" style="font-size: 18px !important; font-weight: bold;">
+      <div class="d-flex justify-content-center title-01">
         <div>BOLETÍN HIDROLÓGICO No &nbsp</div>
         <div contenteditable="true">01</div>
       </div>
-      <div class="d-flex justify-content-center" style="font-size: 15px !important;">
-        <b>Predicción y vigilancia de condiciones hidrológicas en Ecuador Continental</b>
+      <div class="d-flex justify-content-center title-02">
+        <b>CONDICIONES HIDROLÓGICAS EN ECUADOR CONTINENTAL</b> 
       </div>
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center title-03">
         <div><b>Fecha y hora de emisión:</b> &nbsp</div>
         <div contenteditable="true" id="emision-date"></div>
       </div>
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center title-03">
         <div><b>Vigencia:</b> &nbsp</div>
         <div contenteditable="true" id="validity-date"></div>
       </div>
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center title-04">
         <div><b>Estatus:</b> &nbsp</div>
         <div contenteditable="true">Advertencia</div>
       </div>
       <br>
-      <div class="text-center">
+      <div class="text-center"  contenteditable="true">
         La <b>DIRECCIÓN DE PRONÓSTICOS Y ALERTAS HIDROMETEOROLÓGICAS DEL INAMHI</b>, basándose en la información 
-        obtenida del modelo hidrológico GEOGLOWS y el sistema guía de crecidas repentinas FFGS (Flash Flood Guidance System), 
-        emite el siguiente pronóstico hidrológico:
+        obtenida del modelo hidrológico GEOGLOWS, el sistema guía de crecidas repentinas FFGS (Flash Flood Guidance System), 
+        e hidroestimadores satelitales, emite el siguiente boletín de vigilancia y predicción de condiciones hidrológicas:
       </div>
       <br>
     </div>
 
     <div class="report-body">
       <div class="row">
-        <div class="col d-flex justify-content-center">
-          <b>Precipitación acumulada (últimas 24 hrs)</b> 
+        <div class="col d-flex justify-content-center text-center">
+          <b>Precipitación acumulada<br>(últimas 24 hrs)</b> 
         </div>
-        <div class="col d-flex justify-content-center">
-          <b>Saturación media del suelo (últimas 6 hrs)</b>
+        <div class="col d-flex justify-content-center text-center">
+          <b>Saturación media del suelo<br>(últimas 6 hrs)</b>
         </div>
         <div class="w-100"></div>
         <div class="col">
           <div class="map">
             <img src="https://www.hydroshare.org/resource/352379cf82444fd099eca8bfc662789b/data/contents/fig_pacum.png" class="img-fluid">
-            <img width='700px' src='{{ server|safe }}/static/{{ app_name|safe }}/images/legend_pacum.png' class="img-fluid">
+            <img src='{{ server|safe }}/static/{{ app_name|safe }}/images/legend_pacum.png' class="img-fluid">
           </div>
         </div>
         <div class="col">
           <div class="map">
             <img src="https://www.hydroshare.org/resource/352379cf82444fd099eca8bfc662789b/data/contents/fig_asm.png" class="img-fluid">
-            <img width='700px' src='{{ server|safe }}/static/{{ app_name|safe }}/images/legend_moisture.png' class="img-fluid">
+            <img src='{{ server|safe }}/static/{{ app_name|safe }}/images/legend_moisture.png' class="img-fluid">
           </div>
         </div>
         <div class="w-100"></div>
@@ -97,24 +99,24 @@
       </div>
       <br>
       <div class="row">
-        <div class="col d-flex justify-content-center">
-          <b>Pronóstico de precipitación (próx. 24 hrs)</b>
+        <div class="col d-flex justify-content-center text-center">
+          <b>Pronóstico de precipitación<br>(próx. 24 hrs)</b>
         </div>
-        <div class="col d-flex justify-content-center">
-          <b>Precipitación requerida para crecida (próx. 24 hrs)</b>
+        <div class="col d-flex justify-content-center text-center">
+          <b>Precipitación requerida para crecida<br>(próx. 24 hrs)</b>
         </div>
         <div class="w-100"></div>
         <div class="col">
           <div class="map">
             <img src="https://www.hydroshare.org/resource/352379cf82444fd099eca8bfc662789b/data/contents/fig_fmap24.png" class="img-fluid">
-            <img width='700px' src='{{ server|safe }}/static/{{ app_name|safe }}/images/legend_pacum.png' class="img-fluid">
+            <img src='{{ server|safe }}/static/{{ app_name|safe }}/images/legend_pacum.png' class="img-fluid">
           </div>
         </div>
 
         <div class="col">
           <div class="map">
             <img src="https://www.hydroshare.org/resource/352379cf82444fd099eca8bfc662789b/data/contents/fig_ffg.png" class="img-fluid">
-            <img width='700px' src='{{ server|safe }}/static/{{ app_name|safe }}/images/legend_pacum.png' class="img-fluid">
+            <img src='{{ server|safe }}/static/{{ app_name|safe }}/images/legend_pacum.png' class="img-fluid">
           </div>
         </div>
         <div class="w-100"></div>
@@ -131,23 +133,23 @@
       </div>
       <br>
       <div class="row">
-        <div class="col d-flex justify-content-center">
+        <div class="col d-flex justify-content-center text-center">
           <b>Riesgo de crecidas FFGS</b>
         </div>
-        <div class="col d-flex justify-content-center">
+        <div class="col d-flex justify-content-center text-center">
           <b>Alertas de crecidas GEOGLOWS</b>
         </div>
         <div class="w-100"></div>
         <div class="col">
           <div class="map">
             <img src="https://www.hydroshare.org/resource/352379cf82444fd099eca8bfc662789b/data/contents/fig_ffr24.png" class="img-fluid">
-            <img width='700px' src='{{ server|safe }}/static/{{ app_name|safe }}/images/legend_moisture.png' class="img-fluid">
+            <img src='{{ server|safe }}/static/{{ app_name|safe }}/images/legend_moisture.png' class="img-fluid">
           </div>
         </div>
         <div class="col">
           <div class="map">
             <img src="https://www.hydroshare.org/resource/352379cf82444fd099eca8bfc662789b/data/contents/fig_ffr24.png" class="img-fluid">
-            <img width='700px' src='{{ server|safe }}/static/{{ app_name|safe }}/images/legend_moisture.png' class="img-fluid">
+            <img src='{{ server|safe }}/static/{{ app_name|safe }}/images/legend_moisture.png' class="img-fluid">
           </div>
         </div>
         <div class="w-100"></div>
@@ -163,7 +165,42 @@
         </div>
       </div>
     </div>
+    <br>
+    <div class="report-body">
+      <div><b>DESCRIPCIÓN:</b></div>
+      <div class="text-justify"  contenteditable="true">
+        ** Añada aquí la descripción y análisis de las condiciones hidrológicas ...
+      </div>
+      <br>
+      <div><b>¿QUÉ PUEDE PASAR?</b></div>
+      <div class="text-justify"  contenteditable="true">
+        • Es probable que exista acumulación de agua en hogares, negocios y caminos susceptibles.<br>
+        • Las condiciones de las vías podrían verse afectadas por agua estancada, deslizamientos de tierra y bancos de niebla.<br>
+        • Es posible que exista desbordamientos de cuerpos de agua.
+      </div>
+      <br>
+      <div><b>ZONAS AFECTADAS: </b></div>
+      <div class="d-flex justify-content-start">
+        <div><b>Region Litoral:</b> &nbsp</div>
+        <div contenteditable="true">Añada aquí los cantones con advertencias</div>
+      </div>
+      <div class="d-flex justify-content-start">
+        <div><b>Region Interandina:</b> &nbsp</div>
+        <div contenteditable="true">Añada aquí los cantones con advertencias</div>
+      </div>
+      <div class="d-flex justify-content-start">
+        <div><b>Region Amazónica:</b> &nbsp</div>
+        <div contenteditable="true">Añada aquí los cantones con advertencias</div>
+      </div>
+    </div>
   </div>
+  <br><br>
+  <div class="report-container">
+    <button type="button" class="btn btn-primary" onclick="convertirAPDF()">Generar Reporte</button>
+    <br>
+    <br>
+  </div>
+</div>
 {% endblock %}
 
 

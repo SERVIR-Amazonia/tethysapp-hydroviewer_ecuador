@@ -1,6 +1,7 @@
 /* BODY */
 body {
     overflow-y: auto !important;
+    background-color: lightgrey;
 }
 
 /* SCROLL BAR */
@@ -19,19 +20,43 @@ body {
 }
 
 
-
-.report-container{
-    width: 740px;/*826px; height: 1142px;*/
+.app-container{
+    width: 700px; /*826px; height: 1142px;*/
     background-color: white;
     margin: auto;
-    font-size: 13px;
+}
+
+.report-container{
+    width: 650px; /*826px; height: 1142px;*/
+    background-color: white;
+    margin: auto;
+    font-size: 14px !important;
 }
 
 .map{
-    width: 320px !important;
+    width: 280px !important;
     margin: auto;
 }
 
 .text-region{
     font-size: 12px;
+}
+
+
+
+
+.title-01{
+    font-size: 22px !important; 
+    font-weight: bold;
+    color: #0066CC;
+}
+.title-02{
+    font-size: 20px !important;
+}
+.title-03{
+    font-size: 16px !important;
+}
+.title-04{
+    font-size: 20px !important; 
+    color: #31849B;
 }

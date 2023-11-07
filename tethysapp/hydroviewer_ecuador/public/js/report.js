@@ -1,5 +1,9 @@
 function get_date(now){
-    const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    const months = [
+      "Enero", "Febrero", "Marzo", 
+      "Abril", "Mayo", "Junio", 
+      "Julio", "Agosto", "Septiembre", 
+      "Octubre", "Noviembre", "Diciembre"];
     const dayOfMonth = now.getDate();
     const month = months[now.getMonth()];
     const year = now.getFullYear();
@@ -19,12 +23,14 @@ $("#validity-date").html(`Desde ${get_date(now)} hasta ${get_date(future)}`);
 
 
 
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+async function convertirAPDF() {
+    window.scrollTo({top: 0, behavior: "smooth"});
+    await sleep(1000);
 
-
-function convertirAPDF() {
     const elemento = document.getElementById('report-container-id').innerHTML;
     const pdfConfig = {
-      margin: 10,
+      margin: [26, 20, 26, 20], //top, left, buttom, right,
       filename: 'boletin_hidrologico',
       image: { type: 'png' },
       html2canvas: { 
@@ -33,12 +39,23 @@ function convertirAPDF() {
       },
       jsPDF: { 
         unit: 'mm', 
-        format: 'a4', 
+        format: 'letter', 
         orientation: 'portrait'
       },
-      pagebreak: { mode: ['avoid-all'] },
+      pagebreak: { mode: 'avoid-all'},
     };
-    html2pdf().set(pdfConfig).from(elemento).toPdf().save('boletin.pdf')
+    
+    const imgHeader = "http://localhost:8080/static/hydroviewer_ecuador/images/report_header.png";
+    const imgFooter = "http://localhost:8080/static/hydroviewer_ecuador/images/report_footer.png";
+
+    html2pdf().from(elemento).set(pdfConfig).toPdf().get('pdf').then(function (pdf) {
+      var totalPages = pdf.internal.getNumberOfPages(); 
+      hh = pdf.internal.pageSize.getWidth() * 0.1
+      for (var i = 1; i <= totalPages; i++) {
+        pdf.setPage(i);
+        // addImage(linkImage, Format, Posicion x, Posicion y, Ancho, Alto)
+        pdf.addImage(imgHeader, 'PNG', 0, 0, pdf.internal.pageSize.getWidth(), hh); 
+        pdf.addImage(imgFooter, 'PNG', 0, pdf.internal.pageSize.getHeight() - hh, pdf.internal.pageSize.getWidth(), hh); 
+      }
+    }).save("boletin_hidrologico.pdf");
   }
-
-
