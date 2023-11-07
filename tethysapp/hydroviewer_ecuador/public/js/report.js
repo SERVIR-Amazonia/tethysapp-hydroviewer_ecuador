@@ -45,8 +45,8 @@ async function convertirAPDF() {
       pagebreak: { mode: 'avoid-all'},
     };
     
-    const imgHeader = "http://localhost:8080/static/hydroviewer_ecuador/images/report_header.png";
-    const imgFooter = "http://localhost:8080/static/hydroviewer_ecuador/images/report_footer.png";
+    const imgHeader = `${server}/static/${app_name}/images/report_header.png`;
+    const imgFooter = `${server}/static/${app_name}/images/report_footer.png`;
 
     html2pdf().from(elemento).set(pdfConfig).toPdf().get('pdf').then(function (pdf) {
       var totalPages = pdf.internal.getNumberOfPages(); 
