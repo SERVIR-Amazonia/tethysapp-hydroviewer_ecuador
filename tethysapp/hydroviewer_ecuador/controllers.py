@@ -269,7 +269,10 @@ def report(request):
         "fmap24_o": df["fmap24"][2],
         "ffr24_c": df["ffr24"][0],
         "ffr24_s": df["ffr24"][1],
-        "ffr24_o": df["ffr24"][2]
+        "ffr24_o": df["ffr24"][2],
+        "prov_c": df["prov"][0],
+        "prov_s": df["prov"][1],
+        "prov_o": df["prov"][2],
     }
     return render(request, '{0}/report.html'.format(app.package), context)
 
