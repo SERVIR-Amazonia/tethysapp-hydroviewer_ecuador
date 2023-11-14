@@ -5,15 +5,15 @@ const droughtWarningsHTML = `<div class="control control-group">
                             <div class="alert-panel-checkbox">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="check-d-medio">
-                                    <label class="form-check-label" for="check-d-medio">Estiaje moderado - 7Q15</label>
+                                    <label class="form-check-label" for="check-d-medio">Estiaje moderado</label>
                                 </div>
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="check-d-alto">
-                                    <label class="form-check-label" for="check-d-alto">Estiaje alto - 7Q10</label>
+                                    <label class="form-check-label" for="check-d-alto">Estiaje alto</label>
                                 </div>
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="check-d-muy-alto">
-                                    <label class="form-check-label" for="check-d-muy-alto">Estiaje severo - 7Q05</label>
+                                    <label class="form-check-label" for="check-d-muy-alto">Estiaje severo</label>
                                 </div>
                             </div>
                             <br>`;
