@@ -40,14 +40,16 @@
   }
     
   // URL y parametros del recurso de hydroshare
-  var url = 'https://geoserver.hydroshare.org/geoserver/HS-e1920951d6194c78948e45ae7b08ec64/wfs';
+  var url = 'https://geoserver.hydroshare.org/geoserver/HS-e1920951d6194c78948e45ae7b08ec64/wfs'; 
   var params = {
     service: 'WFS',
     version: '1.0.0',
     request: 'GetFeature',
     typeName: 'Advertencia',
     outputFormat: 'application/json'
-  }; 
+  };
+
+  // https://geoserver.hydroshare.org/geoserver/HS-77951ba9bcf04ac5bc68ae3be2acfd90/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=ecuador-geoglows-drainage&outputFormat=application/json
     
   // Carga los datos WFS utilizando AJAX y agrega los resultados a la capa geoJSON
   $.ajax({
