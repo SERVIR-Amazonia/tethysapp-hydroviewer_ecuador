@@ -294,3 +294,22 @@ def get_drainage_json(request):
         return JsonResponse(geojson_data, safe=False)
     except requests.exceptions.RequestException as e:
         return JsonResponse({'error': f'Error al obtener el GeoJSON: {str(e)}'}, status=500)
+
+
+@controller(name='get_ffgs_json', url='{0}/get-ffgs-json'.format(APP_URL))
+def get_ffgs_json(request):
+    # Reemplaza 'URL_DEL_GEOJSON' con la URL real de tu archivo GeoJSON
+    url_geojson = 'https://geoserver.hydroshare.org/geoserver/HS-352379cf82444fd099eca8bfc662789b/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=nwsaffds&maxFeatures=20000&outputFormat=application/json'
+    try:
+        # Descargar el GeoJSON desde la URL
+        response = requests.get(url_geojson)
+        response.raise_for_status()  # Verificar si la solicitud fue exitosa
+        geojson_data = response.json()  # Convertir la respuesta a JSON
+        # Devolver el GeoJSON como respuesta JSON
+        return JsonResponse(geojson_data, safe=False)
+    except requests.exceptions.RequestException as e:
+        return JsonResponse({'error': f'Error al obtener el GeoJSON: {str(e)}'}, status=500)
+
+
+
+
