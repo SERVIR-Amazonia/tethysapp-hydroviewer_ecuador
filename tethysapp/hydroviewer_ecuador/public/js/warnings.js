@@ -49,8 +49,6 @@
     outputFormat: 'application/json'
   };
 
-  // https://geoserver.hydroshare.org/geoserver/HS-77951ba9bcf04ac5bc68ae3be2acfd90/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=ecuador-geoglows-drainage&outputFormat=application/json
-    
   // Carga los datos WFS utilizando AJAX y agrega los resultados a la capa geoJSON
   $.ajax({
     url: url,

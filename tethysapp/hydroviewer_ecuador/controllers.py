@@ -12,6 +12,7 @@ from tethys_sdk.gizmos import PlotlyView
 import io
 import psycopg2
 import pandas as pd
+import geopandas as gpd
 from sqlalchemy import create_engine
 from pandas_geojson import to_geojson
 
@@ -22,7 +23,7 @@ from .app import HydroviewerEcuador as app
 from .models.data import *
 from .models.plots import *
 
-
+import requests
 
 ####################################################################################################
 ##                                       STATUS VARIABLES                                         ##
@@ -276,3 +277,20 @@ def report(request):
     }
     return render(request, '{0}/report.html'.format(app.package), context)
 
+
+
+
+
+@controller(name='get_drainage_json', url='{0}/get-drainage-json'.format(APP_URL))
+def get_drainage_json(request):
+    # Reemplaza 'URL_DEL_GEOJSON' con la URL real de tu archivo GeoJSON
+    url_geojson = 'https://geoserver.hydroshare.org/geoserver/HS-77951ba9bcf04ac5bc68ae3be2acfd90/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=ecuador-geoglows-drainage&outputFormat=application/json'
+    try:
+        # Descargar el GeoJSON desde la URL
+        response = requests.get(url_geojson)
+        response.raise_for_status()  # Verificar si la solicitud fue exitosa
+        geojson_data = response.json()  # Convertir la respuesta a JSON
+        # Devolver el GeoJSON como respuesta JSON
+        return JsonResponse(geojson_data, safe=False)
+    except requests.exceptions.RequestException as e:
+        return JsonResponse({'error': f'Error al obtener el GeoJSON: {str(e)}'}, status=500)
